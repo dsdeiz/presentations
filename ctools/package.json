@@ -1,0 +1,15 @@
+{
+  "name": "ctools",
+  "version": "1.0.0",
+  "description": "Presentation about Chaos Tools.",
+  "author": "Arnold French",
+  "dependencies": {
+    "gulp": "^3.8.9",
+    "gulp-server-livereload": "^1.0.1"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.9",
+    "gulp-connect": "^2.0.6",
+    "gulp-server-livereload": "^1.0.1"
+  }
+}

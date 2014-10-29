@@ -2,7 +2,7 @@
 
 ## Introduction to Chaos Tools
 
-Brief intro to Chaos Tools.
+Brief introduction to Chaos Tools.
 
 ## Chaos Tools' Tools
 
@@ -21,5 +21,3 @@ Using CTools' AJAX helper to further extend Drupal's AJAX framework.
 ### Multi-step Form and Object Cache
 
 Using a combination of CTools' form wizard and Object Cache to create multi-step forms.
-
-## Resources

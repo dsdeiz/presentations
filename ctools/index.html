@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Chaos Tools Presentation</title>
+    <link rel="stylesheet" href="./assets/css/reveal.min.css">
+    <link rel="stylesheet" href="./assets/css/theme/default.css" id="theme">
+    <link rel="stylesheet" href="./assets/lib/css/zenburn.css">
+  </head>
+
+  <body>
+
+    <div class="reveal">
+      <div class="slides">
+
+        <section>
+          <h1>Chaos Tools</h1>
+        </section>
+
+        <section>
+          <p>Module which contains a set of tools used by various contributed modules such as Views, Panels, and Context.</p>
+        </section>
+
+        <section>
+          <p>Chaos Tools by itself does nothing. It however provides useful utilities which can be used by your custom modules. Example helpers include AJAX, Form, Form Wizard, and Object Cache.</p>
+        </section>
+
+        <section>
+          <p>Chaos Tools however includes the module Page Manager which is used for managing Panel pages.</p>
+        </section>
+
+        <section>
+          <h2>Chaos Tools' Tools</h2>
+        </section>
+
+        <section>
+          <h3>Plugin System</h3>
+          <p>Chaos Tools provides a plugin system where contributed modules could make use of the system and other contribed modules (or even your custom module) could further extend the contributed module by implementing the plugins.</p>
+          <p>Examples include Panels and Context</p>
+        </section>
+
+        <section>
+          <h3>Form Helpers</h3>
+          <ul>
+            <li class="fragment">Jump Menu</li>
+            <li class="fragment">Dependent Form Element</li>
+            <li class="fragment">Form Wizard</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>AJAX Helper</h3>
+          <p>The AJAX Helper provides some additional functions which can be used to further extend Drupal's AJAX framework.</p>
+          <p>An example is including a simple link or image link which triggers an AJAX call.</p>
+        </section>
+
+        <section>
+          <h3>Modal</h3>
+          <p>This is an alternative to overlay. An example where it is being used is on Panels.</p>
+        </section>
+
+        <section>
+          <h3>Exportables</h3>
+          <p>Example usage is for Context, Views, and Panels.</p>
+        </section>
+
+        <section>
+          <h3>Form Wizard and Object Cache</h3>
+          <p>Form wizard allows you to create multi-step forms with ease. This is used in combination with Object Cache. It allows you to make use of Form API and simply provide a simple configuration. This would also allow you to only create form constructors and include them in your Form Wizard configuration. This makes use of Object Cache because Object Cache provides a way to store objects as serialized data. This allows you store data that were submitted on the various steps of the form.</p>
+        </section>
+
+        <section>
+          <h2>Uage of the Tools</h2>
+          <ul>
+            <li class="fragment">Custom Panes for Panels</li>
+            <li class="fragment">AJAX</li>
+            <li class="fragment">Form Wizard and Object Cache</li>
+          </ul>
+        </section>
+
+      </div>
+    </div>
+
+    <script src="./assets/lib/js/head.min.js"></script>
+    <script src="./assets/js/reveal.min.js"></script>
+
+    <script>
+      Reveal.initialize({
+        progress: true,
+        center: true,
+        controls: false,
+
+        theme: 'sky',
+        transition: 'linear',
+
+        dependencies: [
+          { src: 'assets/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+        ]
+      });
+    </script>
+
+  </body>
+</html>
