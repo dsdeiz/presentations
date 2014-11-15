@@ -10,6 +10,9 @@
 
 # Configuration of Nginx, HHVM, and MySQL
 
+## Configuration of Nginx
+## Configuration of HHVM
+
 # Benchmarking HHVM and PHP-FPM
 
 # Demonstration
