@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Drupal on HHVM</title>
+
+    <link rel="stylesheet" href="css/reveal.min.css">
+    <link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <section>
+          <h1>Drupal on HHVM</h1>
+        </section>
+
+        <section>
+          <h2>Introduction to HHVM</h2>
+        </section>
+
+        <section>
+          <h3>What is HHVM?</h3>
+          <ul>
+            <li class="fragment">HipHop Virtual Machine</li>
+            <li class="fragment">JIT Compilation</li>
+            <li class="fragment">Replacement for PHP-FPM (PHP 5.6)</li>
+            <li class="fragment">Hack Language</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>"Alternatives" to HHVM</h3>
+          <ul>
+            <li class="fragment">PHP-NG</li>
+            <li class="fragment">HippyVM</li>
+            <li class="fragment">Zephir</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Installation of Nginx, HHVM, and MySQL</h2>
+        </section>
+
+        <section>
+          <h3>Installation of Nginx and MySQL</h3>
+          <pre><code class="bash">$ sudo apt-get install nginx mysql-server</code></pre>
+        </section>
+
+        <section>
+          <h3>Installation of HHVM</h3>
+          <pre><code class="bash">$ sudo apt-get install python-software-properties
+$ sudo add-apt-repository ppa:mapnik/boost
+$ wget -O - http://dl.hhvm.com/conf/hhvm.gpg.key | sudo apt-key add -
+$ echo deb http://dl.hhvm.com/ubuntu precise main | sudo tee /etc/apt/sources.list.d/hhvm.list
+$ sudo apt-get update
+$ sudo apt-get install hhvm
+$ sudo /usr/share/hhvm/install_fastcgi.sh</code></pre>
+        </section>
+
+        <section>
+          <h2>Configuration of Nginx, HHVM, and MySQL</h2>
+        </section>
+
+        <section>
+          <h3>Configuration of HHVM</h3>
+          <ul>
+            <li><code>/etc/hhvm/php.ini</code></li>
+            <li><code>/etc/hhvm/server.ini</code></li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Configuration of Nginx</h3>
+          <pre><code class="conf">server {
+        root /var/www/sites/hhvm.dev/d7;
+        index index.php;
+
+        server_name hhvm-d7.dev;
+        include hhvm.conf;
+
+        location / {
+                try_files $uri @rewrite;
+        }
+
+        location @rewrite {
+                rewrite ^ /index.php;
+        }
+}</code></pre>
+        </section>
+
+        <section>
+          <h2>Testing Performance of</br />HHVM and PHP-FPM</h2>
+          <p class="fragment"><img src="./images/oss-performance.png" /></p>
+        </section>
+
+        <section>
+          <h2>Demonstration</h2>
+        </section>
+
+        <section>
+          <h2>Conclusion</h2>
+        </section>
+      </div>
+
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.min.js"></script>
+
+    <script>
+
+      Reveal.initialize({
+        controls: false,
+        progress: true,
+        history: true,
+        center: true,
+
+        theme: 'moon',
+        transition: 'linear',
+
+        dependencies: [
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>
