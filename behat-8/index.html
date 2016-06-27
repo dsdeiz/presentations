@@ -41,11 +41,11 @@
       </section>
       <section>
         <h2>Behat</h2>
-        <p>It's similar to writing human-readable sentences that describe how a feature should work. What context should be given, the actions an end user should do and finally the expected output.</p>
+        <p>It's similar to writing human-readable sentences that describe how a feature should work, what context should be given, the actions an end user should do and finally the expected output.</p>
       </section>
       <section>
         <h3>Writing Behat tests</h3>
-        <p>Gherkin is the syntax used when producing tests. Statements are ending by using line endings. A test is usually separated into three:</p>
+        <p>Gherkin is the syntax used when producing tests. Statements are ended by using line endings. A test is usually separated into three:</p>
         <ul>
           <li class="fragment">Feature</li>
           <li class="fragment">Scenario</li>
@@ -98,7 +98,7 @@ Feature: Calculate tax.
       <section>
         <h2>Mink</h2>
         <p>Library for Behat which has supports for various browser emulators.</p>
-        <ul class="fragment">
+        <ul>
           <li class="fragment">Goutte</li>
           <li class="fragment">Selenium2</li>
           <li class="fragment">Zombie</li>
@@ -115,6 +115,56 @@ Feature: Calculate tax.
           <li class="fragment">Drush (api)</li>
           <li class="fragment">Drupal (api)</li>
         </ul>
+      </section>
+      <section>
+        <table>
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>Blackbox</th>
+              <th>Drush</th>
+              <th>Drupal API</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Map Regions</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>Yes</td>
+            </tr>
+            <tr>
+              <td>Create users</td>
+              <td>No</td>
+              <td>Yes</td>
+              <td>Yes</td>
+            </tr>
+            <tr>
+              <td>Create nodes</td>
+              <td>No</td>
+              <td>No</td>
+              <td>Yes</td>
+            </tr>
+            <tr>
+              <td>Create vocabularies</td>
+              <td>No</td>
+              <td>No</td>
+              <td>Yes</td>
+            </tr>
+            <tr>
+              <td>Create taxonomy terms</td>
+              <td>No</td>
+              <td>No</td>
+              <td>Yes</td>
+            </tr>
+            <tr>
+              <td>Run tests and site on different servers</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>No</td>
+            </tr>
+          </tbody>
+        </table>
       </section>
       <section>
         <h2>It's all about the DEMO!</h2>
