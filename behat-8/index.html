@@ -24,20 +24,19 @@
     <div class="slides">
       <section>
         <h1>Behavior-driven Development</h1>
-        <h2>Using Behat and PhantomJS</h2>
+        <h2>Using Behat in Drupal</h2>
       </section>
       <section>
         <h2>BDD</h2>
         <p>In software engineering, behavior-driven development (abbreviated BDD) is a software development process based on test-driven development (TDD). Behavior-driven development combines the general techniques and principles of TDD with ideas from domain-driven design and object-oriented analysis and design to provide software development and management teams with shared tools and a shared process to collaborate on software development.</p>
         <p><em>&mdash; <a href="http://en.wikipedia.org/wiki/Behavior-driven_development">Wikipedia</a></em></p>
-        <aside class="notes">I have no idea what this means.</aside>
       </section>
       <section>
         <h2>Tools</h2>
         <ul>
           <li class="fragment"><strong>Behat</strong> &ndash; BDD framework for PHP.</li>
-          <li class="fragment"><strong>PhantomJS</strong> &ndash; Headless WebKit scriptable with a JavaScript API.</li>
           <li class="fragment"><strong>Mink</strong> &ndash; Library for integrating Behat with browser emulators such as Goutte and Selenium.</li>
+          <li class="fragment"><strong>Drupal Extension</strong> &ndash; Provides integration between Behat, Drupal, and Mink.</li>
         </ul>
       </section>
       <section>
@@ -45,7 +44,29 @@
         <p>It's similar to writing human-readable sentences that describe how a feature should work. What context should be given, the actions an end user should do and finally the expected output.</p>
       </section>
       <section>
-        <h2>Example:</h2>
+        <h3>Writing Behat tests</h3>
+        <p>Gherkin is the syntax used when producing tests. Statements are ending by using line endings. A test is usually separated into three:</p>
+        <ul>
+          <li class="fragment">Feature</li>
+          <li class="fragment">Scenario</li>
+          <li class="fragment">Steps</li>
+        </ul>
+      </section>
+      <section>
+        <h4>Feature</h4>
+        <p>Features are separated into files and are named as <code>*.feature</code>. The beginning of the file starts with the keyword <code>Feature:</code>. The next three lines after defining a feature is more like a description. These next 3 lines are not usually parsed by Behat. It's usually just a description to give readers a background of the whole feature. A feature then contains different scenarios which will be further broken down into steps.</p>
+      </section>
+      <section>
+        <h4>Scenario</h4>
+        <p>A scenario describes the actual tests. It starts with the keyword <code>Scenario:</code>. Think of it as how your application would react in a certain situation. When running Behat, you can specify which scenario it would just run. A scenario is further broken down into steps.</p>
+      </section>
+      <section>
+        <h4>Steps</h4>
+        <p>Steps are the way you tell the test about what context it has, the actions an end user would do, and the expected outcome. Keywords used in steps are <code>Given</code>, <code>When</code>, <code>Then</code>, <code>And</code>, and <code>But</code>.</p>
+        <!-- <p><strong>Given</strong> is giving your test a context e.g. <code>Given I am a logged in user with the "authenticated user" role</code>. <strong> -->
+      </section>
+      <section>
+        <h3>Example:</h3>
         <pre><code class="cucumber">
 @api @javascript
 Feature: Calculate tax.
@@ -75,34 +96,25 @@ Feature: Calculate tax.
         </pre></code>
       </section>
       <section>
-        <h2>PhantomJS</h2>
-        <p>Headless browser emulator</p>
-      </section>
-      <section>
         <h2>Mink</h2>
-        <p>Library for Behat which has supports for various browser emulators</p>
-      </section>
-      <section>
-        <h2>Writing Behat tests</h2>
-        <p>Gherkin is the syntax used when producing tests. Statements are ending by using line endings. A test is usually separated into three:</p>
-        <ul>
-          <li class="fragment">Feature</li>
-          <li class="fragment">Scenario</li>
-          <li class="fragment">Steps</li>
+        <p>Library for Behat which has supports for various browser emulators.</p>
+        <ul class="fragment">
+          <li class="fragment">Goutte</li>
+          <li class="fragment">Selenium2</li>
+          <li class="fragment">Zombie</li>
         </ul>
       </section>
       <section>
-        <h2>Feature</h2>
-        <p>Features are separated into files and are named as <code>*.feature</code>. The beginning of the file starts with the keyword <code>Feature:</code>. The next three lines after defining a feature is more like a description. These next 3 lines are not usually parsed by Behat. It's usually just a description to give readers a background of the whole feature. A feature then contains different scenarios which will be further broken down into steps.</p>
+        <h2>Drupal Extension</h2>
+        <p>The Drupal Extension is an integration layer between Behat, Mink Extension, and Drupal.</p>
       </section>
       <section>
-        <h2>Scenario</h2>
-        <p>A scenario describes the actual tests. It starts with the keyword <code>Scenario:</code>. Think of it as how your application would react in a certain situation. When running Behat, you can specify which scenario it would just run. A scenario is further broken down into steps.</p>
-      </section>
-      <section>
-        <h2>Steps</h2>
-        <p>Steps are the way you tell the test about what context it has, the actions an end user would do, and the expected outcome. Keywords used in steps are <code>Given</code>, <code>When</code>, <code>Then</code>, <code>And</code>, and <code>But</code>.</p>
-        <!-- <p><strong>Given</strong> is giving your test a context e.g. <code>Given I am a logged in user with the "authenticated user" role</code>. <strong> -->
+        <h2>Drivers</h2>
+        <ul>
+          <li class="fragment">Blackbox</li>
+          <li class="fragment">Drush (api)</li>
+          <li class="fragment">Drupal (api)</li>
+        </ul>
       </section>
       <section>
         <h2>It's all about the DEMO!</h2>
@@ -131,7 +143,6 @@ Feature: Calculate tax.
       { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
       { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
       { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-      { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
       ]
     });
   </script>
